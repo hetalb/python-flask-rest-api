@@ -9,8 +9,8 @@ def index():
 
 @app.route('/api')
 def api_index():
-    str = dict(name='Hetal',city='Columbus',state='OH')
+    str = dict(name='John Doe',city='New York',state='NY')
     return jsonify(str)
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', debug = True, port=5000)
+    app.run(host='0.0.0.0', debug = True, port=5000)
