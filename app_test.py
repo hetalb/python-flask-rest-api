@@ -23,7 +23,7 @@ class FlaskTest(unittest.TestCase):
 
     def test_index_content(self):
         result = self.app.get('/')
-        self.assertIn('Hello', result.data)
+        self.assertIn('Hello', result.data.decode('utf-8'))
 
     def test_api_return_code(self):
         result = self.app.get('/api')
@@ -31,7 +31,7 @@ class FlaskTest(unittest.TestCase):
 
     def test_api_content(self):
         result = self.app.get('/api')
-        self.assertIn('city', result.data)
+        self.assertIn('city', result.data.decode('utf-8'))
 
     def test_pagenot_found(self):
         result = self.app.get('/missing-page')
